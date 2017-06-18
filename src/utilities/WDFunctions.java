@@ -1,6 +1,7 @@
 package utilities;
 
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,7 @@ public class WDFunctions {
 	BaseUrl browserObj = new BaseUrl();
 
 	public static WebDriver driver;
-	//public static Logger APPLICATION_LOGS = Logger.getLogger ("devpinoyLogger");
+	public static Logger APPLICATION_LOGS = Logger.getLogger ("devpinoyLogger");
 	
 	public void typeByXpath (String locators, String values){
 		driver.findElement(By.xpath(locators)).clear();

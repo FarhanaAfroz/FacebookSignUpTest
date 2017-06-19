@@ -5,6 +5,7 @@
     <classes>
       <class name="Testcases.fbSignUpTC">
         <methods>
+          <include name="afterTest"/>
           <include name="signUp"/>
           <include name="beforeTest"/>
         </methods>

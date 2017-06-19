@@ -14,7 +14,7 @@ import base.BaseUrl;
 public class WDFunctions {
 	
 	BaseUrl browserObj = new BaseUrl();
-
+	
 	public static WebDriver driver;
 	public static Logger APPLICATION_LOGS = Logger.getLogger ("devpinoyLogger");
 	
@@ -41,29 +41,32 @@ public class WDFunctions {
 	}
 	
 		
-	public void dropdownMonth(String locators, String values){
-		WebElement ddM = driver.findElement(By.xpath(locators));
-		Select mSelect = new Select(ddM);
-		//mSelect.selectByValue(values);
-		mSelect.selectByVisibleText(values);
+	public void dropdownByXpath(String locators, String values){
 		
-	}
-
-	public void dropdownDay(String locators, String values){
-		WebElement ddD = driver.findElement(By.xpath(locators));
-		Select dSelect = new Select(ddD);
-		dSelect.selectByValue(values);
-		
+		WebElement dd = driver.findElement(By.xpath(locators));
+		Select ddSelect = new Select(dd);
+		//ddSelectByValue(ddSelect, values);	
+		ddSelectByIndex(ddSelect);
+		//ddSelectByVisibleText(ddSelect, values);
 	}
 	
-	public void dropdownYear(String locators, String values){
-		WebElement ddY = driver.findElement(By.xpath(locators));
-		Select ySelect = new Select(ddY);
-		ySelect.selectByValue(values);
-		
+	public  void ddSelectByIndex(Select sValue){
+		sValue.selectByIndex(5);
+
+	}
+	
+	public void ddSelectByValue(Select sValue, String values){
+		sValue.selectByValue(values);
+
+	}
+	
+	public void ddSelectByVisibleText(Select sValue, String values){
+		sValue.selectByValue(values);
+
 	}
 
-	public void radioButton(String locatorF, String locatorM){
+
+	public void radioButtonByXpath(String locatorF, String locatorM){
 		boolean isSelectedGender = driver.findElement(By.xpath(locatorF)).isSelected();
 		if(isSelectedGender)
 			driver.findElement(By.xpath(locatorM)).click();

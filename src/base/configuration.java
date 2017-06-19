@@ -2,8 +2,6 @@ package base;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
-import utilities.BrowserSetup;
 import utilities.WDFunctions;
 
 public class configuration extends WDFunctions {

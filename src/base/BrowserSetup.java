@@ -1,9 +1,7 @@
-package utilities;
+package base;
 
 
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import base.BaseUrl;
 import utilities.WDFunctions;
 
 

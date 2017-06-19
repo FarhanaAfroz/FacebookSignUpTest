@@ -1,5 +1,7 @@
 package Testcases;
 
+
+
 import org.testng.annotations.Test;
 
 import base.configuration;
@@ -26,13 +28,13 @@ public class fbSignUpTC extends configuration {
 		// type password
 		typeByXpath (fbSignupl.fbpasswordLoactor, fbSignupv.passwordValue);
 		//select month from drop down
-		dropdownMonth(fbSignupl.fbddMonthLoactor, fbSignupv.ddMonthValue);
+		dropdownByXpath(fbSignupl.fbddMonthLoactor, fbSignupv.ddMonthValue);
 		//select day from drop down
-		dropdownDay(fbSignupl.fbddDayLoactor, fbSignupv.ddDayValue);
+		dropdownByXpath(fbSignupl.fbddDayLoactor, fbSignupv.ddDayValue);
 		//select year from drop down
-		dropdownYear(fbSignupl.fbddYearLoactor, fbSignupv.ddYearValue);
+		dropdownByXpath(fbSignupl.fbddYearLoactor, fbSignupv.ddYearValue);
 		//select female radio button
-		radioButton(fbSignupl.fbRBtnFemaleLocator, fbSignupl.fbRBtnMaleLocator);
+		radioButtonByXpath(fbSignupl.fbRBtnFemaleLocator, fbSignupl.fbRBtnMaleLocator);
 		
 		
 		

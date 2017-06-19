@@ -50,6 +50,16 @@ public class WDFunctions {
 		//ddSelectByVisibleText(ddSelect, values);
 	}
 	
+	public void dropdownById(String locators, String values){
+		
+		WebElement dd = driver.findElement(By.xpath(locators));
+		Select ddSelect = new Select(dd);
+		ddSelectByValue(ddSelect, values);	
+		//ddSelectByIndex(ddSelect);
+		//ddSelectByVisibleText(ddSelect, values);
+	}
+
+		
 	public  void ddSelectByIndex(Select sValue){
 		sValue.selectByIndex(5);
 

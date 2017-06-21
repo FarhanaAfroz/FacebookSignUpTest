@@ -8,12 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
-
-import base.BaseUrl;
+import base.configuration;
 
 public class WDFunctions {
 	
-	BaseUrl browserObj = new BaseUrl();
+	configuration br = new configuration();
 	
 	public static WebDriver driver;
 	public static Logger APPLICATION_LOGS = Logger.getLogger ("devpinoyLogger");
@@ -45,9 +44,7 @@ public class WDFunctions {
 		
 		WebElement dd = driver.findElement(By.xpath(locators));
 		Select ddSelect = new Select(dd);
-		//ddSelectByValue(ddSelect, values);	
 		ddSelectByIndex(ddSelect);
-		//ddSelectByVisibleText(ddSelect, values);
 	}
 	
 	public void dropdownById(String locators, String values){
@@ -55,8 +52,6 @@ public class WDFunctions {
 		WebElement dd = driver.findElement(By.xpath(locators));
 		Select ddSelect = new Select(dd);
 		ddSelectByValue(ddSelect, values);	
-		//ddSelectByIndex(ddSelect);
-		//ddSelectByVisibleText(ddSelect, values);
 	}
 
 		
@@ -89,7 +84,7 @@ public class WDFunctions {
 
 	public void maxPage (){
 		
-		if(browserObj.browser.equalsIgnoreCase("Chrom")){
+		if(br.browser.equalsIgnoreCase("Chrom")){
 		//Create an instance of ChromeOption interface	
 		ChromeOptions chromeOptions = new ChromeOptions();
 											
@@ -99,8 +94,9 @@ public class WDFunctions {
 		//Create an instance of WebDriver interface by passing parameter
 		driver = new ChromeDriver(chromeOptions);
 		}
-		else if(browserObj.browser.equalsIgnoreCase("Firefox")){
+		else if(br.browser.equalsIgnoreCase("Firefox")){
 		driver.manage().window().maximize();
+		
 		}
 
 	}

@@ -9,7 +9,7 @@ public class configuration extends WDFunctions {
 	
 	BaseUrl url = new BaseUrl();
 	BrowserSetup brSet = new BrowserSetup();
-	public String browser = "Chrom";
+	public String browser = "Chrome";
 	
 	@BeforeTest
 	public void beforeTest (){
@@ -17,7 +17,10 @@ public class configuration extends WDFunctions {
 		APPLICATION_LOGS.info ("Browser STARTED");
 		brSet.browserInitialize(browser);
 		APPLICATION_LOGS.info ("Chrome STARTED");
-		maxPage();
+		if(browser.equals("firefox") || browser.equals("safari") || browser.equals("ie")){
+			maxPage();
+		}
+		
 		APPLICATION_LOGS.info("Browser MAXIMIZE");
 		driver.get(url.baseUrl);
 		APPLICATION_LOGS.info ("www.facebook.com opened");

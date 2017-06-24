@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests">
-  <test name=" FaceBook SignUp testing using FirefoxTest">
-  	<parameter name="browser" value="firefox" />
+  <test name=" FaceBook SignUp testing using ChtomeTest">
+  	<parameter name="browser" value="chrome" />
   	
     <classes>
       <class name="base.browserSetup"/>
     </classes>
   </test> <!-- Test -->
-  <test name=" FaceBook SignUp testing using ChromeTest">
-  	<parameter name="browser" value="chrome" />
+  <test name=" FaceBook SignUp testing using FirefoxTest">
+  	<parameter name="browser" value="firefox" />
   	
     <classes>
       <class name="base.browserSetup"/>

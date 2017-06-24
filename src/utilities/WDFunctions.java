@@ -5,14 +5,10 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
-import base.configuration;
 
 public class WDFunctions {
 	
-	configuration br = new configuration();
 	
 	public static WebDriver driver;
 	public static Logger APPLICATION_LOGS = Logger.getLogger ("devpinoyLogger");
@@ -84,21 +80,8 @@ public class WDFunctions {
 
 	public void maxPage (){
 		
-		if(br.browser.equalsIgnoreCase("Chrom")){
-		//Create an instance of ChromeOption interface	
-		ChromeOptions chromeOptions = new ChromeOptions();
-											
-		// for chrome browser maximizing code
-		chromeOptions.addArguments("--start-maximized");
-										
-		//Create an instance of WebDriver interface by passing parameter
-		driver = new ChromeDriver(chromeOptions);
-		}
-		else if(br.browser.equalsIgnoreCase("Firefox")){
 		driver.manage().window().maximize();
 		
-		}
-
 	}
 
 }
